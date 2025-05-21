@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <title>Document</title>
+</head>
+<body>
+  
+  <div id="mainArea">
+
+    <header class="bg-white shadow-md py-2 lg:py-4">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <!-- Logo -->
+        <div class="flex-shrink-0 flex items-center">
+          <img 
+            src="./Sparely.png" 
+            alt="Sparely Logo"
+            class="h-12 w-12 md:h-16 md:w-16 rounded-full shadow-lg object-cover border-2 border-white transition-all duration-300"
+          >
+          <span class="ml-3 text-2xl font-bold text-red-600 font-sans md:text-left text-center w-full block md:inline-block">
+            Sparely Trading
+          </span>
+        </div>
+
+        <div>
+          <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+          <dotlottie-player src="https://lottie.host/ef306763-e847-4312-90a0-aebf5f7997ae/Fwsrv13Bqr.lottie" background="transparent" speed="1" style="width:15vh; height:150px" loop autoplay></dotlottie-player>
+        </div>
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex flex-1 justify-center space-x-8">
+        <a href="#" class="text-red-600 hover:text-blue-800 font-semibold font-medium transition">Home</a>
+        <a href="#" class="text-red-600 hover:text-blue-800 font-medium font-semibold transition">Products</a>
+        <a href="#" class="text-red-600 hover:text-blue-800 font-medium font-semibold transition">About</a>
+        <a href="#" class="text-red-600 hover:text-blue-800 font-medium font-semibold transition">Contact</a>
+        </nav>
+        <!-- Button (Desktop) -->
+        <div class="hidden md:flex items-center">
+        <button class="bg-red-700 text-white px-5 py-2 rounded-lg font-semibold hover:bg-blue-800 transition ml-4">Sign In</button>
+        </div>
+        <!-- Mobile menu button -->
+        <div class="md:hidden flex items-center">
+        <button id="mobile-menu-button" class="text-blue-800 focus:outline-none">
+          <svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+        </div>
+      </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 bg-white shadow">
+      <nav class="flex flex-col space-y-2 mt-2">
+        <a href="#" class="text-red-600 hover:text-blue-800 font-medium font-semibold transition">Home</a>
+        <a href="#" class="text-red-600 hover:text-blue-800 font-medium font-semibold transition">Products</a>
+        <a href="#" class="text-red-600 hover:text-blue-800 font-medium font-semibold transition">About</a>
+        <a href="#" class="text-red-600 hover:text-blue-800 font-medium font-semibold transition">Contact</a>
+        <button class="bg-blue-800 text-white px-5 py-2 rounded-lg font-semibold hover:bg-red-600 transition mt-2">Sign In</button>
+      </nav>
+      </div>
+      <script>
+      const btn = document.getElementById('mobile-menu-button');
+      const menu = document.getElementById('mobile-menu');
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+      </script>
+    </header>
+
+    <div class="w-full relative">
+      <div id="carousel" class="relative w-full h-64 md:h-96 overflow-hidden"></div>
+      <img src="https://images.unsplash.com/photo-1677145503755-5a8c581671fe?q=80&w=1530&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Perfume" class="carousel-img w-full h-full object-cover absolute inset-0 transition-opacity duration-700 opacity-0">
+      <img src="https://images.unsplash.com/photo-1630080644615-0b157f1574ec?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Powerbank" class="carousel-img w-full h-full object-cover absolute inset-0 transition-opacity duration-700 opacity-0">
+      <img src="https://images.unsplash.com/photo-1672848700906-2b8ca62639e4?q=80&w=1503&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Adapter" class="carousel-img w-full h-full object-cover absolute inset-0 transition-opacity duration-700 opacity-0">
+
+      <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
+        <h2 class="text-white mx-2 text-3xl md:text-5xl font-bold text-center drop-shadow-lg">
+          Electronic Gadgets & Perfumes
+        </h2>
+      </div>
+
+      <!-- Carousel Controls -->
+      <button id="prev" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-90 rounded-full p-2">
+        <svg class="h-6 w-6 text-white hover:text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <button id="next" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-90 rounded-full p-2">
+        <svg class="h-6 w-6 text-white hover:text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+        </svg>
+      </button>
+
+    </div>
+
+    <div id="cardArea" class="max-w-7xl mx-auto px-4 py-8">
+      <div class="flex justify-between items-center mx-4 mb-4">
+        <h3 class="text-2xl font-bold text-blue-800">Featured Products</h3>
+        <a href="/products.html" class="text-blue-800 font-bold hover:underline flex items-center">
+          View All
+          <svg class="ml-1 h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col items-center cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1677145503755-5a8c581671fe?q=80&w=400&auto=format&fit=crop" alt="Perfume" class="h-32 w-32 object-cover rounded mb-3">
+          <div class="text-center">
+        <h4 class="font-semibold text-lg text-gray-800">Luxury Perfume</h4>
+        <a 
+          href="#" 
+          onclick="sendWhatsAppMessage('Luxury Perfume', '1', 'https://images.unsplash.com/photo-1677145503755-5a8c581671fe?q=80&w=400&auto=format&fit=crop'); return false;" 
+          target="_blank" 
+          class="mt-2 inline-block bg-green-600 hover:bg-green-700 text-white px-8 py-2 rounded font-semibold transition"
+        >
+          Buy&nbsp;Now
+        </a>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col items-center cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1630080644615-0b157f1574ec?q=80&w=400&auto=format&fit=crop" alt="Powerbank" class="h-32 w-32 object-cover rounded mb-3">
+          <div class="text-center">
+        <h4 class="font-semibold text-lg text-gray-800">Powerbank</h4>
+        <a 
+          href="#" 
+          onclick="sendWhatsAppMessage('Powerbank', '2', 'https://images.unsplash.com/photo-1630080644615-0b157f1574ec?q=80&w=400&auto=format&fit=crop'); return false;" 
+          target="_blank" 
+          class="mt-2 inline-block bg-green-600 hover:bg-green-700 text-white px-8 py-2 rounded font-semibold transition"
+        >
+          Buy&nbsp;Now
+        </a>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col items-center cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1672848700906-2b8ca62639e4?q=80&w=400&auto=format&fit=crop" alt="Adapter" class="h-32 w-32 object-cover rounded mb-3">
+          <div class="text-center">
+        <h4 class="font-semibold text-lg text-gray-800">Adapter</h4>
+        <a 
+          href="#" 
+          onclick="sendWhatsAppMessage('Adapter', '3', 'https://images.unsplash.com/photo-1672848700906-2b8ca62639e4?q=80&w=400&auto=format&fit=crop'); return false;" 
+          target="_blank" 
+          class="mt-2 inline-block bg-green-600 hover:bg-green-700 text-white px-8 py-2 rounded font-semibold transition"
+        >
+          Buy&nbsp;Now
+        </a>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col items-center cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=400&auto=format&fit=crop" alt="Headphones" class="h-32 w-32 object-cover rounded mb-3">
+          <div class="text-center">
+        <h4 class="font-semibold text-lg text-gray-800">Headphones</h4>
+        <a 
+          href="#" 
+          onclick="sendWhatsAppMessage('Headphones', '4', 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=400&auto=format&fit=crop'); return false;" 
+          target="_blank" 
+          class="mt-2 inline-block bg-green-600 hover:bg-green-700 text-white px-8 py-2 rounded font-semibold transition"
+        >
+          Buy&nbsp;Now
+        </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Carousel Image Transition
+    const images = document.querySelectorAll('.carousel-img');
+    let current = 0;
+
+    function showImage(idx) {
+      images.forEach((img, i) => {
+        img.style.opacity = i === idx ? '1' : '0';
+      });
+    }
+    // ✅ Fix: Show the first image immediately on load
+    showImage(current);
+    document.getElementById('prev').onclick = () => {
+      current = (current - 1 + images.length) % images.length;
+      showImage(current);
+    };
+    document.getElementById('next').onclick = () => {
+      current = (current + 1) % images.length;
+      showImage(current);
+    };
+    setInterval(() => {
+      current = (current + 1) % images.length;
+      showImage(current);
+    }, 4000);
+
+    // ✅ Function to send WhatsApp message from product card button
+    function sendWhatsAppMessage(productName, productId, imageUrl) {
+      const phone = '917012264425';
+      const text = `I'm interested in:\nProductName: ${productName}\nID: ${productId}\nImage: ${imageUrl}`;
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank');
+    }
+    
+  </script>
+
+</body>
+</html>
